@@ -1,0 +1,15 @@
+@import "vars";
+@import "mixins";
+@import "normalize";
+@import "extends";
+@import "all"; // сюда можно ставить стили для общих вещей в макете
+@import "header";  // шапка;Алена
+@import "sectionPresent"; //  секция Revolutionary Editor: Анжела
+@import "sectionFeatures"; // секция Here is what you get: Анжела 
+@import "sectionTestimonials"; // секция People are Talking About Fork;  Алена
+@import "sectionPricing"; // секция Fork Subscription Pricing; Анжела 
+
+
+
+
+

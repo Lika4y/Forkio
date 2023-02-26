@@ -1,0 +1,30 @@
+/** @format */
+
+@mixin flex($flex-direction, $align) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $align;
+}
+
+@mixin padding($top, $bottom) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+@mixin grid($columns) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+}
+
+// можно подставить сюда шрифты
+@mixin fonts($a, $b, $c) {
+  font-weight: $a;
+  font-size: $b;
+  line-height: $c;
+}
+
+// можно подставить сюда марджины
+@mixin margin($a, $b) {
+  margin-top: $a;
+  margin-bottom: $b;
+}

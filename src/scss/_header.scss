@@ -1,0 +1,261 @@
+/** @format */
+
+.main-header {
+  background-image: url(../../dist/images/header/background-s.jpg);
+  background-size: contain;
+  background-position-x: center;
+  @media (min-width: $mediumSize) {
+    background-image: url(../../dist/images/header/background-m.jpg);
+    background-size: cover;
+  }
+  @media (min-width: $largeSize) {
+    background-image: url(../../dist/images/header/background.jpg);
+    background-size: cover;
+  }
+}
+.navigation {
+  @include flex(row, space-between);
+  align-items: center;
+  position: relative;
+  transform-style: flat;
+  @media (min-width: $mediumSize) {
+    flex-wrap: wrap;
+  }
+  @media (min-width: $largeSize) {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+}
+
+.header__navigation {
+  background-color: #27262a;
+  @include padding(34px, 32px);
+  padding-left: 15px;
+  padding-right: 15px;
+  @media (min-width: $mediumSize) {
+    padding: 24px 20px 18px 20px;
+  }
+  @media (min-width: $largeSize) {
+    padding-top: 41px;
+    background: none;
+  }
+}
+
+.navigation__logo__link {
+  display: flex;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  @include fonts(700, 24px, 16px);
+  text-transform: uppercase;
+  color: $maincolor;
+  &:hover {
+    color: $hoverColor;
+  }
+}
+
+.navigation__logo__img:nth-child(2) {
+  display: none;
+}
+.navigation__logo__link:hover .navigation__logo__img:nth-child(1) {
+  display: none;
+}
+
+.navigation__logo__link:hover .navigation__logo__img:nth-child(2) {
+  display: inline;
+}
+
+.navigation__logo__text {
+  margin-left: 17px;
+  display: none;
+  @media (min-width: $mediumSize) {
+    display: inline-block;
+  }
+}
+.navigation__menu {
+  @include flex(column, center);
+  text-align: left;
+  background-color: #333333;
+  position: absolute;
+  width: calc(100% - 20px);
+  z-index: 2;
+  right: 10px;
+  top: 107px;
+  padding-bottom: 5px;
+
+  @media (min-width: $mediumSize) {
+    text-align: center;
+    background: none;
+    flex-direction: row;
+    justify-content: space-around;
+    @include fonts(700, 16px, 18px);
+    color: $maincolor;
+    position: static;
+    background: none;
+    padding-bottom: 0;
+    order: 3;
+    width: 100%;
+    padding: 0 20px;
+  }
+  @media (min-width: $largeSize) {
+    order: 2;
+    background: none;
+    gap: 48px;
+    justify-content: flex-end;
+  }
+}
+.navigation__menu--hidden {
+  visibility: hidden;
+
+  @media (min-width: $mediumSize) {
+    visibility: visible;
+  }
+}
+.navigation__item {
+  padding: 29px 35px 21px 39px;
+  border-bottom: 2px solid #3b3b3b;
+  width: 100%;
+  &:focus,
+  &:active::before {
+    content: "";
+    background-color: $maincolor;
+    position: absolute;
+    width: 8px;
+    height: 53px;
+    top: 10px;
+    left: 0px;
+  }
+  @media (min-width: $mediumSize) {
+    border-bottom: none;
+    padding: 23px 5px 10px 5px;
+    &:focus,
+    &:active::before {
+      content: none;
+    }
+  }
+  @media (min-width: $largeSize) {
+    width: auto;
+    &:focus,
+    &:active::before {
+      content: none;
+    }
+  }
+}
+
+.navigation__link {
+  @include fonts(400, 16px, 16px);
+  color: $hoverColor;
+  text-transform: capitalize;
+  &:focus,
+  &:active {
+    color: $maincolor;
+  }
+
+  @media (min-width: $mediumSize) {
+    @include fonts(700, 13px, 14px);
+    color: $maincolor;
+    &:hover {
+      color: $hoverColor;
+    }
+  }
+  @media (min-width: 560px) {
+    @include fonts(700, 16px, 18px);
+  }
+}
+.navigation__button {
+  order: 3;
+  background-color: #272626;
+  border: none;
+  @media (min-width: $mediumSize) {
+    display: none;
+  }
+}
+.navigation__button--hidden {
+  display: none;
+}
+
+.button {
+  color: $hoverColor;
+  background-color: $maincolor;
+  border-radius: 40px;
+  text-transform: capitalize;
+  &:hover {
+    color: $maincolor;
+    background-color: $hoverColor;
+  }
+}
+.header__button {
+  min-width: 145px;
+  order: 2;
+  padding: 11px 30px 11px 30px;
+  @include fonts(700, 16px, 16px);
+  @media (min-width: $mediumSize) {
+    order: 2;
+  }
+  @media (min-width: $largeSize) {
+    order: 3;
+    margin-left: 48px;
+  }
+  &:hover {
+    border: 1px solid $maincolor;
+  }
+}
+.intro {
+  padding-top: 50px;
+}
+.intro__title {
+  @include fonts(700, 48px, 48px);
+  color: $hoverColor;
+  margin-bottom: 19px;
+  text-transform: capitalize;
+  @media (min-width: $mediumSize) {
+    @include fonts(700, 72px, 72px);
+    margin-bottom: 69px;
+  }
+  @media (min-width: $largeSize) {
+    @include fonts(700, 82px, 82px);
+  }
+}
+.intro__subtitle {
+  @include fonts(400, 18px, 24px);
+  color: $maincolor;
+  margin-bottom: 14px;
+  text-transform: capitalize;
+  @media (min-width: $mediumSize) {
+    @include fonts(400, 24px, 24px);
+    margin-bottom: 19px;
+  }
+  @media (min-width: $largeSize) {
+    @include fonts(400, 30px, 30px);
+  }
+}
+.intro__version {
+  @include fonts(400, 14px, 14px);
+  color: $greyColor;
+  text-transform: uppercase;
+  margin-bottom: 394px;
+  @media (min-width: $mediumSize) {
+    margin-bottom: 439px;
+  }
+  @media (min-width: $largeSize) {
+    margin-bottom: 426px;
+    @include fonts(400, 16px, 16px);
+  }
+}
+.intro__button {
+  @include fonts(700, 18px, 20px);
+  border: none;
+  padding: 13px 29px;
+  min-width: 232px;
+  position: relative;
+  top: 27px;
+  border: 2px solid $maincolor;
+  @media (min-width: $mediumSize) {
+    @include fonts(700, 21px, 23px);
+    min-width: 390px;
+    padding: 23px 61px;
+    top: 32px;
+  }
+  &:hover {
+    border: 2px solid $maincolor;
+  }
+}
