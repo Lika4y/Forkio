@@ -1,23 +1,38 @@
-html{
-    font-family: 'Lato', sans-serif;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Noto Sans', sans-serif;
+/** @format */
+
+html {
+  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 body {
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-    text-align: center;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.title {
+  color: $hoverColor;
+  text-transform: capitalize;
+  @include fonts(700, 36px, 48px);
+  @media (min-width: 481px) {
+    @include fonts(700, 42px, 44px);
   }
-  
-  .container {
-    max-width: 1200px;
-    min-width: 320px;
-    width: 100%;
-    margin: 0 auto;
-    padding-left: 10px;
-    padding-right: 10px;
+  @media (min-width: 993px) {
+    @include fonts(700, 48px, 50px);
   }
-
-
-
+}
+.btn {
+  border-radius: 40px;
+}

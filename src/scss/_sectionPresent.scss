@@ -10,7 +10,55 @@
   @media (min-width: $largeSize) {
     @include margin(19px, 70px);
   }
-}
+  &-title {
+    @include fonts(26px, 700, 28px);
+  color: $presenttitle;
+  text-transform: uppercase;
+  @media (min-width: $mediumSize) {
+    @include fonts(700, 42px, 42px);
+  }
+  @media (min-width: $largeSize) {
+    @include fonts(700, 54px, 54px);
+  }
+  }
+  &-list{
+        @include flex(row, space-around);
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-left: 20px;
+        padding-right: 20px;
+        @media (min-width: $mediumSize) {
+          @include flex(row, center);
+        }
+      }
+  &-list__item {
+        border: 2px solid rgba(27, 31, 36, 0.15);
+        border-radius: 6px;
+        background-color: #f6f8fa;
+      }
+  &__link {
+          @include flex(row, center);
+          gap: 5px;
+          justify-content: space-between;
+          align-items: center;
+      }
+  &__link__icon {
+          margin-left: 12px;
+        }
+  &__link__text {
+            font-family: "Noto Sans", sans-serif;
+            color: #24292f;
+            @include fonts(500, 12px, 20px);
+          }
+  &__link--number {
+              padding-left: 7px;
+              padding-right: 12px;
+              background-color: #fff;
+              border-left: 2px solid rgba(27, 31, 36, 0.15);
+              border-radius: 0 6px 6px 0;
+            }
+  }
+
 
 .section-subtitle{
     @include fonts(400, 14px, 14px);
@@ -24,22 +72,9 @@
     }
 }
 
-.present-title {
-  @include fonts(26px, 700, 28px);
-  color: $presenttitle;
-  text-transform: uppercase;
-  @media (min-width: $mediumSize) {
-    @include fonts(700, 42px, 42px);
-  }
-  @media (min-width: $largeSize) {
-    @include fonts(700, 54px, 54px);
-  }
-}
-
   .section-text{
     font-family: 'Lato', sans-serif;
     @include fonts(14px, 400, 20px);
-    color: $textlight;
     padding-left: 15px;
     padding-right: 15px;
     }
@@ -65,46 +100,4 @@
   @media (min-width: $largeSize) {
     @include margin(35px, 13px);
   }
-}
-
-.present-list {
-  @include flex(row, space-around);
-  flex-wrap: wrap;
-  gap: 8px;
-  padding-left: 20px;
-  padding-right: 20px;
-  @media (min-width: $mediumSize) {
-    @include flex(row, center);
-  }
-}
-
-.present-list__item {
-  border: 2px solid rgba(27, 31, 36, 0.15);
-  border-radius: 6px;
-  background-color: #f6f8fa;
-}
-
-.present__link {
-    @include flex(row, center);
-    gap: 5px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.present__link__icon {
-  margin-left: 12px;
-}
-
-.present__link__text {
-  font-family: "Noto Sans", sans-serif;
-  color: #24292f;
-  @include fonts(500, 12px, 20px);
-}
-
-.present__link--number {
-  padding-left: 7px;
-  padding-right: 12px;
-  background-color: #fff;
-  border-left: 2px solid rgba(27, 31, 36, 0.15);
-  border-radius: 0 6px 6px 0;
 }

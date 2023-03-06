@@ -14,29 +14,30 @@
   }
 }
 .navigation {
-  @include flex(row, space-between);
-  align-items: center;
   position: relative;
-  transform-style: flat;
-  @media (min-width: $mediumSize) {
-    flex-wrap: wrap;
-  }
-  @media (min-width: $largeSize) {
-    flex-wrap: nowrap;
+
+  &__wrapper {
+    transform-style: flat;
+    @include flex(row, space-between);
     align-items: center;
+    @media (min-width: $mediumSize) {
+      flex-wrap: wrap;
+    }
+    @media (min-width: $largeSize) {
+      flex-wrap: nowrap;
+      align-items: center;
+    }
   }
 }
 
 .header__navigation {
   background-color: #27262a;
   @include padding(34px, 32px);
-  padding-left: 15px;
-  padding-right: 15px;
   @media (min-width: $mediumSize) {
     padding: 24px 20px 18px 20px;
   }
   @media (min-width: $largeSize) {
-    padding-top: 41px;
+    padding-top: 30px;
     background: none;
   }
 }
@@ -79,7 +80,7 @@
   width: calc(100% - 20px);
   z-index: 2;
   right: 10px;
-  top: 107px;
+  top: 73px;
   padding-bottom: 5px;
 
   @media (min-width: $mediumSize) {
@@ -102,20 +103,24 @@
     gap: 48px;
     justify-content: flex-end;
   }
-}
-.navigation__menu--hidden {
-  visibility: hidden;
-
-  @media (min-width: $mediumSize) {
-    visibility: visible;
+  &--hidden {
+    visibility: hidden;
+    @media (min-width: $mediumSize) {
+      visibility: visible;
+    }
   }
 }
+
 .navigation__item {
   padding: 29px 35px 21px 39px;
   border-bottom: 2px solid #3b3b3b;
   width: 100%;
-  &:focus,
-  &:active::before {
+
+  &--active a {
+    color: $maincolor;
+  }
+
+  &--active::before {
     content: "";
     background-color: $maincolor;
     position: absolute;
@@ -123,21 +128,22 @@
     height: 53px;
     top: 10px;
     left: 0px;
+
+    @media (min-width: $mediumSize) {
+      content: none;
+    }
+
+    @media (min-width: $largeSize) {
+      content: none;
+    }
   }
+
   @media (min-width: $mediumSize) {
     border-bottom: none;
     padding: 23px 5px 10px 5px;
-    &:focus,
-    &:active::before {
-      content: none;
-    }
   }
   @media (min-width: $largeSize) {
     width: auto;
-    &:focus,
-    &:active::before {
-      content: none;
-    }
   }
 }
 
@@ -168,15 +174,14 @@
   @media (min-width: $mediumSize) {
     display: none;
   }
-}
-.navigation__button--hidden {
-  display: none;
+  &--hidden {
+    display: none;
+  }
 }
 
 .button {
   color: $hoverColor;
   background-color: $maincolor;
-  border-radius: 40px;
   text-transform: capitalize;
   &:hover {
     color: $maincolor;
@@ -201,61 +206,71 @@
 }
 .intro {
   padding-top: 50px;
-}
-.intro__title {
-  @include fonts(700, 48px, 48px);
-  color: $hoverColor;
-  margin-bottom: 19px;
-  text-transform: capitalize;
-  @media (min-width: $mediumSize) {
-    @include fonts(700, 72px, 72px);
-    margin-bottom: 69px;
-  }
-  @media (min-width: $largeSize) {
-    @include fonts(700, 82px, 82px);
-  }
-}
-.intro__subtitle {
-  @include fonts(400, 18px, 24px);
-  color: $maincolor;
-  margin-bottom: 14px;
-  text-transform: capitalize;
-  @media (min-width: $mediumSize) {
-    @include fonts(400, 24px, 24px);
-    margin-bottom: 19px;
-  }
-  @media (min-width: $largeSize) {
-    @include fonts(400, 30px, 30px);
-  }
-}
-.intro__version {
-  @include fonts(400, 14px, 14px);
-  color: $greyColor;
-  text-transform: uppercase;
-  margin-bottom: 394px;
-  @media (min-width: $mediumSize) {
-    margin-bottom: 439px;
-  }
-  @media (min-width: $largeSize) {
-    margin-bottom: 426px;
-    @include fonts(400, 16px, 16px);
-  }
-}
-.intro__button {
-  @include fonts(700, 18px, 20px);
-  border: none;
-  padding: 13px 29px;
-  min-width: 232px;
   position: relative;
-  top: 27px;
-  border: 2px solid $maincolor;
+  z-index: -1;
   @media (min-width: $mediumSize) {
-    @include fonts(700, 21px, 23px);
-    min-width: 390px;
-    padding: 23px 61px;
-    top: 32px;
+    padding-top: 69px;
   }
-  &:hover {
+  @media (min-width: $largeSize) {
+    padding-top: 80px;
+  }
+
+  &__title {
+    @include fonts(700, 48px, 48px);
+    margin-bottom: 19px;
+    margin-top: 0;
+    @media (min-width: $mediumSize) {
+      @include fonts(700, 72px, 72px);
+      margin-bottom: 69px;
+    }
+    @media (min-width: $largeSize) {
+      @include fonts(700, 82px, 82px);
+    }
+  }
+
+  &__subtitle {
+    @include fonts(400, 18px, 24px);
+    color: $maincolor;
+    margin-bottom: 14px;
+    text-transform: capitalize;
+    @media (min-width: $mediumSize) {
+      @include fonts(400, 24px, 24px);
+      margin-bottom: 19px;
+    }
+    @media (min-width: $largeSize) {
+      @include fonts(400, 30px, 30px);
+    }
+  }
+
+  &__version {
+    @include fonts(400, 14px, 14px);
+    color: $greyColor;
+    text-transform: uppercase;
+    margin-bottom: 394px;
+    @media (min-width: $mediumSize) {
+      margin-bottom: 439px;
+    }
+    @media (min-width: $largeSize) {
+      margin-bottom: 426px;
+      @include fonts(400, 16px, 16px);
+    }
+  }
+  &__button {
+    @include fonts(700, 18px, 20px);
+    border: none;
+    padding: 13px 29px;
+    min-width: 232px;
+    position: relative;
+    top: 27px;
     border: 2px solid $maincolor;
+    @media (min-width: $mediumSize) {
+      @include fonts(700, 21px, 23px);
+      min-width: 390px;
+      padding: 23px 61px;
+      top: 32px;
+    }
+    &:hover {
+      border: 2px solid $maincolor;
+    }
   }
 }

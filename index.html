@@ -21,56 +21,73 @@
 
 <body>
     <header class="main-header">
-
         <nav class="navigation header__navigation">
-            <div class="navigation__logo">
-                <a class="navigation__logo__link" href="./index.html">
-                    <img class="navigation__logo__img" width="43" height="41" src="./dist/images/header/logo.png"
-                        alt="">
-                    <img class="navigation__logo__img" width="43" height="41" src="./dist/images/header/logo-hover.png"
-                        alt="">
-                    <span class="navigation__logo__text">ForkIO</span>
-                </a>
+            <div class="container">
+                <div class="navigation__wrapper">
+                    <a class="navigation__logo__link" href="./index.html">
+                        <img class="navigation__logo__img" width="43" height="41" src="./dist/images/header/logo.png"
+                            alt="">
+                        <img class="navigation__logo__img" width="43" height="41"
+                            src="./dist/images/header/logo-hover.png" alt="">
+                        <span class="navigation__logo__text">ForkIO</span>
+                    </a>
+                    <ul class="navigation__menu navigation__menu--hidden">
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">Overview</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">About Fork</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">Buying Options</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">Support</a>
+                        </li>
+                    </ul>
+                    <button class="navigation__button">
+                        <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <title>background</title>
+                                <rect fill="none" id="canvas_background" height="34" width="34" y="-1" x="-1" />
+                                <g display="none" overflow="visible" id="canvasGrid">
+                                    <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%"
+                                        width="100%" />
+                                </g>
+                            </g>
+                            <g>
+                                <title>Layer 1</title>
+                                <rect stroke="null" rx="2" id="svg_3" height="5.02732" width="29.18032" y="12.44297"
+                                    x="1.40984" stroke-width="1.5" fill="#ffffff" />
+                                <rect stroke="null" rx="2" id="svg_4" height="5.02732" width="29.18032" y="22.82548"
+                                    x="1.40984" stroke-width="1.5" fill="#ffffff" />
+                                <rect stroke="null" rx="2" id="svg_5" height="5.02732" width="16.06557" y="2.82548"
+                                    x="14.52459" stroke-width="1.5" fill="#ffffff" />
+                            </g>
+                        </svg>
+
+                        <svg class="navigation__button--hidden" xmlns="http://www.w3.org/2000/svg" width="32"
+                            height="32" fill="white" viewBox="0 0 320 512">
+                            <path
+                                d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
+                        </svg>
+                    </button>
+
+                    <a class="btn button header__button" href="#">Buy Now</a>
+                </div>
             </div>
-
-            <ul class="navigation__menu navigation__menu--hidden">
-                <li class="navigation__item">
-                    <a href="#" class="navigation__link">Overview</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="#" class="navigation__link">About Fork</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="#" class="navigation__link">Buying Options</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="#" class="navigation__link">Support</a>
-                </li>
-            </ul>
-            <button class="navigation__button">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 448 512">
-                    <path
-                        d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
-                </svg>
-                <svg class="navigation__button--hidden" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                    fill="white" viewBox="0 0 320 512">
-                    <path
-                        d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
-                </svg>
-            </button>
-            </a>
-            <a class="button header__button" href="#">Buy Now</a>
         </nav>
-        <div class="container">
-            <section class="intro">
-                <h1 class="intro__title">
+        <section class="intro">
+            <div class="container">
+                <h1 class="title intro__title">
                     Fork App
                 </h1>
                 <h2 class="intro__subtitle">A Real Gamechanger In The World Of Web-Development</h2>
                 <p class="intro__version">v. 2.8 For Mac and Windows</p>
-                <button class="button intro__button">download for free now</button>
-        </div>
+                <button class="btn button intro__button">download for free now</button>
+            </div>
+        </section>
+
     </header>
     <main>
         <section class="present">
@@ -204,7 +221,7 @@
 
         <section class="testimonials">
             <div class="container">
-                <h2 class="testimonials__title">
+                <h2 class="title testimonials__title">
                     People Are Talking About Fork
                 </h2>
                 <ul class="testimonials__feedback feedback">
@@ -281,7 +298,7 @@
 
         <section class="pricing">
             <div class="container">
-                <h2 class="pricing-title">Fork Subscription Pricing</h2>
+                <h2 class="title pricing-title">Fork Subscription Pricing</h2>
                 <ul class="pricing-list">
                     <li class="pricing__item">
                         <p class="pricing__category">Students</p>
@@ -289,7 +306,7 @@
                         <span class="pricing_category-period">per month</span>
                         <span class="pricing_category-details pricing_category-details--position">Personal
                             License</span>
-                        <button class="pricing-btn pricing-btn--position">purchase</button>
+                        <button class="btn pricing-btn pricing-btn--position">purchase</button>
                     </li>
                     <li class="pricing__item">
                         <p class="pricing__category">professional</p>
@@ -298,7 +315,7 @@
                         <span class="pricing_category-details pricing_category-details--position">Professional
                             License</span>
                         <span class="pricing_category-details">Email Support</span>
-                        <button class="pricing-btn">purchase</button>
+                        <button class="btn pricing-btn">purchase</button>
                     </li>
                     <li class="pricing__item pricing__item--current">
                         <p class="pricing__category pricing__category--current">agency</p>
@@ -307,7 +324,7 @@
                         <span class="pricing_category-details pricing_category-details--position current--detail">1-12
                             Team Members</span>
                         <span class="pricing_category-details">Phone Support</span>
-                        <button class="pricing-btn pricing-btn--current">purchase</button>
+                        <button class="btn pricing-btn pricing-btn--current">purchase</button>
                     </li>
                     <li class="pricing__item">
                         <p class="pricing__category">enterprise</p>
@@ -316,7 +333,7 @@
                         <span class="pricing_category-details pricing_category-details--position">Unlimited Team Members
                         </span>
                         <span class="pricing_category-details">24/ 7 Phone Support</span>
-                        <button class="pricing-btn">purchase</button>
+                        <button class="btn pricing-btn">purchase</button>
                     </li>
                 </ul>
             </div>
